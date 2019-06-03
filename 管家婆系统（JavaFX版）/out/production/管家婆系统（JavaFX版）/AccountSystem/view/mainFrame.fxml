@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AccountSystem.view.MainFrameController">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" prefHeight="400.0" prefWidth="600.0">
+         <items>
+            <AnchorPane fx:id="leftSplitPane" minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="239.0">
+               <children>
+                  <VBox alignment="CENTER" layoutX="-1.0" prefHeight="398.0" prefWidth="174.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="150.0" prefWidth="157.0">
+                           <children>
+                              <ImageView fx:id="userImage" fitHeight="150.0" fitWidth="254.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/panda.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="56.0" prefWidth="174.0">
+                           <children>
+                              <Label fx:id="userNameLabel" text="用户名" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="174.0">
+                           <children>
+                              <Line disable="true" endX="100.0" opacity="0.34" startX="-50.0" strokeLineCap="BUTT" strokeMiterLimit="20.0" strokeType="OUTSIDE" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="totalOutputLabel" text="总支出：" />
+                              <TextField fx:id="totalOutputTextField" editable="false" prefHeight="30.0" prefWidth="110.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="totalInputLabel" text="总收入：" />
+                              <TextField fx:id="totalInputTextField" editable="false" prefHeight="30.0" prefWidth="110.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="balanceLabel" text="余   额：" />
+                              <TextField fx:id="balanceTextField" editable="false" prefHeight="30.0" prefWidth="110.0" />
+                           </children>
+                        </HBox>
+                     </children></VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="rightSplitPane" minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="354.0">
+               <children>
+                  <TabPane fx:id="TabbedPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="398.0" prefWidth="416.0" rotateGraphic="true" tabClosingPolicy="UNAVAILABLE">
+                     <tabs>
+                        <Tab fx:id="fileTabPane" closable="false" onSelectionChanged="#fileTabPaneSelectedEvent" text="文件">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="49.0" prefWidth="416.0" spacing="20.0">
+                                       <children>
+                                          <Button fx:id="importButton" mnemonicParsing="false" onAction="#importButtonEvent" text="导入" />
+                                          <Button fx:id="exportButton" mnemonicParsing="false" onAction="#exportButtonEvent" text="导出" />
+                                          <Button fx:id="backupButton" mnemonicParsing="false" onAction="#backupButtonEvent" text="备份" />
+                                          <Button fx:id="recoverButton" mnemonicParsing="false" onAction="#recoverButtonEvent" text="恢复" />
+                                          <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exitButtonEvent" text="退出" />
+                                       </children>
+                                       <effect>
+                                          <Blend />
+                                       </effect>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="editTabPane" closable="false" onSelectionChanged="#editTabPaneSelectedEvent" text="编辑">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefHeight="359.0" prefWidth="416.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="52.0" prefWidth="416.0" spacing="20.0">
+                                             <children>
+                                                <Button fx:id="addButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addButtonEvent" text="添加" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" />
+                                                <Button fx:id="deleteButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#deleteButtonEvent" text="删除" textOverrun="CENTER_WORD_ELLIPSIS" />
+                                                <Button fx:id="alterButton" mnemonicParsing="false" onAction="#alterButtonEvent" text="修改" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="302.0" prefWidth="416.0">
+                                             <children>
+                                                <TableView fx:id="table2" cacheShape="false" centerShape="false" editable="true" prefHeight="302.0" prefWidth="422.0" scaleShape="false">
+                                                   <columns>
+                                                      <TableColumn fx:id="idColumn2" prefWidth="75.0" text="序号" />
+                                                      <TableColumn fx:id="typeColumn2" prefWidth="75.0" text="类型" />
+                                                      <TableColumn fx:id="moneyColumn2" prefWidth="75.0" text="金额" />
+                                                      <TableColumn fx:id="classificationColumn2" prefWidth="75.0" text="分类" />
+                                                      <TableColumn fx:id="memoColumn2" prefWidth="75.0" text="备注" />
+                                                      <TableColumn fx:id="dateColumn2" prefWidth="75.0" text="日期" />
+                                                   </columns>
+                                                   <contextMenu>
+                                                      <ContextMenu>
+                                                        <items>
+                                                          <MenuItem fx:id="deleteContextMenu" mnemonicParsing="false" onAction="#deleteContextMenuEvent" text="删除" />
+                                                            <MenuItem fx:id="alterContextMenu" mnemonicParsing="false" onAction="#alterContextMenuEvent" text="修改" />
+                                                            <MenuItem fx:id="addContextMenu" mnemonicParsing="false" onAction="#addContextMenuEvent" text="添加" />
+                                                        </items>
+                                                      </ContextMenu>
+                                                   </contextMenu></TableView>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="checkTabPane" closable="false" onSelectionChanged="#checkTabPaneSelectedEvent" text="查询">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox layoutY="10.0" prefHeight="349.0" prefWidth="416.0" spacing="10.0">
+                                       <children>
+                                          <HBox prefHeight="48.0" prefWidth="416.0">
+                                             <children>
+                                                <HBox alignment="CENTER" prefHeight="47.0" prefWidth="214.0" spacing="10.0">
+                                                   <children>
+                                                      <Button fx:id="checkButton" mnemonicParsing="false" onAction="#checkButtonEvent" text="查询" />
+                                                      <Button fx:id="conditionButton" mnemonicParsing="false" onAction="#conditionButtonEvent" text="条件查询" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefHeight="52.0" prefWidth="204.0" spacing="10.0">
+                                                   <children>
+                                                      <Button fx:id="barChartButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#barChartButtonEvent" text="条形图" />
+                                                      <Button fx:id="lineChartButton" mnemonicParsing="false" onAction="#lineChartButtonEvent" text="折线图" />
+                                                      <Button fx:id="pieChartButton" mnemonicParsing="false" onAction="#pieChartButtonEvent" text="饼图" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Line endX="100.0" startX="-300.0" />
+                                             </children>
+                                          </VBox>
+                                          <TableView fx:id="table" cacheShape="false" centerShape="false" editable="true" prefHeight="302.0" prefWidth="422.0" scaleShape="false">
+                                             <columns>
+                                                <TableColumn fx:id="idColumn" prefWidth="75.0" text="序号" />
+                                                <TableColumn fx:id="typeColumn" prefWidth="75.0" text="类型" />
+                                                <TableColumn fx:id="moneyColumn" prefWidth="75.0" text="金额" />
+                                                <TableColumn fx:id="classificationColumn" prefWidth="75.0" text="分类" />
+                                                <TableColumn fx:id="memoColumn" prefWidth="75.0" text="备注" />
+                                                <TableColumn fx:id="dateColumn" prefWidth="75.0" text="日期" />
+                                             </columns>
+                                             <contextMenu>
+                                                <ContextMenu>
+                                                   <items>
+                                                      <MenuItem fx:id="deleteContextMenu1" mnemonicParsing="false" onAction="#deleteContextMenuEvent" text="删除" />
+                                                      <MenuItem fx:id="alterContextMenu1" mnemonicParsing="false" onAction="#alterContextMenuEvent" text="修改" />
+                                                      <MenuItem fx:id="addContextMenu1" mnemonicParsing="false" onAction="#addContextMenuEvent" text="添加" />
+                                                   </items>
+                                                </ContextMenu>
+                                             </contextMenu>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="optionTabPane" closable="false" onSelectionChanged="#optionTabPaneSelectedEvent" text="选项">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="166.0" prefWidth="378.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="416.0" spacing="10.0">
+                                       <children>
+                                          <Button fx:id="outputClassificationButton" mnemonicParsing="false" onAction="#outputClassificationButtonEvent" text="支出分类" />
+                                          <Button fx:id="inputClassificationButton" mnemonicParsing="false" onAction="#inputClassificationButtonEvent" text="收入分类" />
+                                          <Button fx:id="alterPasswordButton" mnemonicParsing="false" onAction="#alterPasswordButtonEvent" text="修改密码" />
+                                          <Button fx:id="userButton" mnemonicParsing="false" onAction="#userButtonEvent" text="用户" />
+                                          <Button fx:id="themeButton" mnemonicParsing="false" onAction="#themeButtonEvent" text="主题" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+                  <AnchorPane prefHeight="398.0" prefWidth="416.0">
+                     <children>
+                        <MenuBar layoutX="-14.0" layoutY="94.0" prefHeight="32.0" prefWidth="416.0">
+                          <menus>
+                            <Menu mnemonicParsing="false" text="文件">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="导入" />
+                                    <MenuItem mnemonicParsing="false" text="导出" />
+                                    <MenuItem mnemonicParsing="false" text="备份" />
+                                    <MenuItem mnemonicParsing="false" text="恢复" />
+                                    <MenuItem mnemonicParsing="false" text="退出" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="编辑">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="Delete" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="查询">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="About" />
+                              </items>
+                            </Menu>
+                              <Menu mnemonicParsing="false" text="选项">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Action 1" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="帮助">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Action 1" />
+                                </items>
+                              </Menu>
+                          </menus>
+                        </MenuBar>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
