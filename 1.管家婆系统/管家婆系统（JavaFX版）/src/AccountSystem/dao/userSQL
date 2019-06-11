@@ -38,3 +38,10 @@ insert into tb_records(uId, rType, rMoney, rClassification, rMemo, rDate) value 
 insert into tb_records(uId, rType, rMoney, rClassification, rMemo, rDate) value (1,'收入',800,'工资','发工资了','2019-06-15');
 insert into tb_records(uId, rType, rMoney, rClassification, rMemo, rDate) value (1,'支出',300,'饮食','无备注','2019-06-16');
 
+-- 刷新主键编号
+-- 删除原有主键
+alter table tb_records drop rId;
+-- 添加新主键字段
+alter table tb_records add rId int not null first;
+-- 设置新主键
+alter table tb_records modify column rId int not null auto_increment,add primary key(rId);

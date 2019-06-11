@@ -1,12 +1,16 @@
 package AccountSystem.bean;
 
+import AccountSystem.tools.SimpleTools;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Property {
     private ArrayList inputClassificationList;// 收入分类
     private ArrayList outputClassificationList;// 支出分类
 
-    public Property() {}
+    public Property() {
+    }
 
     public void setInputClassificationList(ArrayList inputClassificationList) {
         this.inputClassificationList = inputClassificationList;
@@ -17,23 +21,24 @@ public class Property {
     }
 
     //初始化集合
-    public ArrayList getInputClassificationList(){
-        inputClassificationList=new ArrayList();
-        inputClassificationList.add("工资");
-        inputClassificationList.add("补贴");
-        inputClassificationList.add("奖金");
+    public ArrayList getInputClassificationList() throws IOException {
+        inputClassificationList = new ArrayList();
+        String readResult = new SimpleTools().dataReadProperties("E:\\GitHub\\LearningSource\\实战\\管家婆系统（JavaFX版）\\src\\AccountSystem\\properties\\classification.ini", "input");
+        String[] splitArray = new SimpleTools().convertStrToArray(readResult, ",");
+        for (int i = 0; i < splitArray.length; i++) {
+            inputClassificationList.add(splitArray[i]);
+        }
         return inputClassificationList;
     }
 
     //初始化集合
-    public ArrayList getOutputClassificationList(){
-        outputClassificationList=new ArrayList();
-        outputClassificationList.add("饮食");
-        outputClassificationList.add("服饰");
-        outputClassificationList.add("交通");
-        outputClassificationList.add("住宿");
-        outputClassificationList.add("文娱");
-        outputClassificationList.add("生活用品");
+    public ArrayList getOutputClassificationList() throws IOException {
+        outputClassificationList = new ArrayList();
+        String readResult = new SimpleTools().dataReadProperties("E:\\GitHub\\LearningSource\\实战\\管家婆系统（JavaFX版）\\src\\AccountSystem\\properties\\classification.ini", "output");
+        String[] splitArray = new SimpleTools().convertStrToArray(readResult, ",");
+        for (int i = 0; i < splitArray.length; i++) {
+            outputClassificationList.add(splitArray[i]);
+        }
         return outputClassificationList;
     }
 

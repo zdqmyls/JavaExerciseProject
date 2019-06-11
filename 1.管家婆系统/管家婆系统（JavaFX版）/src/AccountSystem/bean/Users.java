@@ -1,7 +1,5 @@
 package AccountSystem.bean;
 
-import java.io.File;
-
 public class Users {
     private int userId;
     private String userName;

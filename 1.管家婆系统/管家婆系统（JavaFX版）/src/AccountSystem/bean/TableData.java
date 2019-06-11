@@ -2,12 +2,12 @@ package AccountSystem.bean;
 
 import javafx.beans.property.SimpleStringProperty;
 
-public class TableData  {
-    private  final SimpleStringProperty id;
-    private  final SimpleStringProperty type;
-    private  final SimpleStringProperty money;
-    private  final SimpleStringProperty classification;
-    private  final SimpleStringProperty memo;
+public class TableData {
+    private final SimpleStringProperty id;
+    private final SimpleStringProperty type;
+    private final SimpleStringProperty money;
+    private final SimpleStringProperty classification;
+    private final SimpleStringProperty memo;
 
     public String getId() {
         return id.get();
@@ -81,7 +81,7 @@ public class TableData  {
         this.date.set(date);
     }
 
-    private  final SimpleStringProperty date;
+    private final SimpleStringProperty date;
 
     public TableData(String id, String type, String money, String classification, String memo, String date) {
         this.id = new SimpleStringProperty(id);
