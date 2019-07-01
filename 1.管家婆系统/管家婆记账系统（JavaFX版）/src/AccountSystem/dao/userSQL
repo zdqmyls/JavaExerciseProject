@@ -1,0 +1,67 @@
+-- 创建数据库db_accountSystem
+create database db_accountSystem;
+
+use db_accountSystem;
+
+-- 创建用户表tb_users
+create table tb_users(
+  uId int not null auto_increment,-- 用户id，自动生成
+  uName varchar(20) not null,-- 用户名
+  uPassword varchar(40) not null,-- 用户密码
+  uImagePath varchar(200),-- 用户图像路径
+  primary key(uId)
+);
+
+-- 向用户表tb_users添加一些测试数据
+insert into tb_users(uName, uPassword) value ('张三',MD5('123456'));
+insert into tb_users(uName, uPassword) value ('李四',MD5('654321'));
+insert into tb_users(uName, uPassword) value ('王五',MD5('456789'));
+insert into tb_users(uName, uPassword) value ('赵六',MD5('987654'));
+
+-- 创建记录表tb_records
+create table tb_records (
+  uId int not null,-- 外键Id
+  rId int not null auto_increment,-- 账目记录id，自动生成
+  rType varchar(20) not null,-- 账目类型
+  rMoney float(10) not null,-- 账目金额
+  rClassification varchar(20) not null,-- 账目分类
+  rMemo varchar(3000) not null,-- 账目备注
+  rDate date not null,-- 账目日期
+  primary key(rId),-- 设置表主键
+  foreign key(uId) references tb_users(uId)-- 设置外键
+);
+
+-- 向记录表tb_records添加一些测试数据
+insert into tb_records(uId, rType, rMoney, rClassification, rMemo, rDate) value (1,'支出',300,'饮食','无备注','2019-05-02');
+insert into tb_records(uId, rType, rMoney, rClassification, rMemo, rDate) value (1,'收入',500,'补贴','发补贴了','2019-05-15');
+insert into tb_records(uId, rType, rMoney, rClassification, rMemo, rDate) value (1,'支出',300,'饮食','无备注','2019-05-20');
+insert into tb_records(uId, rType, rMoney, rClassification, rMemo, rDate) value (1,'收入',800,'工资','发工资了','2019-06-15');
+insert into tb_records(uId, rType, rMoney, rClassification, rMemo, rDate) value (1,'支出',300,'饮食','无备注','2019-06-16');
+
+-- 创建记录分类表tb_classification
+create table tb_classification(
+  cId int not null auto_increment,
+  cName varchar(20) not null,
+  cType varchar(20) not null,
+  primary key(cId)
+);
+
+-- 向记录分类表tb_classification中添加一些测试数据
+insert into tb_classification (cName, cType) values ('工资','收入');
+insert into tb_classification (cName, cType) values ('补贴','收入');
+insert into tb_classification (cName, cType) values ('奖金','收入');
+insert into tb_classification (cName, cType) values ('饮食','支出');
+insert into tb_classification (cName, cType) values ('服饰','支出');
+insert into tb_classification (cName, cType) values ('交通','支出');
+insert into tb_classification (cName, cType) values ('旅游','支出');
+insert into tb_classification (cName, cType) values ('住宿','支出');
+insert into tb_classification (cName, cType) values ('文娱','支出');
+insert into tb_classification (cName, cType) values ('生活用品','支出');
+
+-- 刷新主键编号
+-- 删除原有主键
+alter table tb_records drop rId;
+-- 添加新主键字段
+alter table tb_records add rId int not null first;
+-- 设置新主键
+alter table tb_records modify column rId int not null auto_increment,add primary key(rId);

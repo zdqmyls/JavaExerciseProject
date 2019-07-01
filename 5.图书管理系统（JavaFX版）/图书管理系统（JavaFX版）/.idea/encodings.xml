@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/images/about.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/images/add.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/images/base.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/images/bookManager.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/images/bookTypeManager.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/images/delete.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/images/edit.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/images/exit.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/images/login.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/images/logo.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/images/me.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/images/modify.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/images/password.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/images/reset.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/images/search.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/images/userName.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/BookManageSystem/images/about.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/BookManageSystem/images/add.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/BookManageSystem/images/base.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/BookManageSystem/images/bookManager.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/BookManageSystem/images/bookTypeManager.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/BookManageSystem/images/delete.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/BookManageSystem/images/edit.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/BookManageSystem/images/exit.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/BookManageSystem/images/login.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/BookManageSystem/images/logo.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/BookManageSystem/images/me.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/BookManageSystem/images/modify.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/BookManageSystem/images/password.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/BookManageSystem/images/reset.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/BookManageSystem/images/search.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/BookManageSystem/images/userName.png" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
