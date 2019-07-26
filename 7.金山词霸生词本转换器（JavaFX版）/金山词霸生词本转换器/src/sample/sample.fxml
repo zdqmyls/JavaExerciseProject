@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
+            <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0" spacing="30.0">
+                    <children>
+                        <TextField fx:id="importTextArea" prefHeight="30.0" prefWidth="358.0" promptText="请选择导入txt文件路径：" />
+                        <Button fx:id="importButton" mnemonicParsing="false" onAction="#do_importButton_event" text="导入" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                    <children>
+                        <Label text="请输入单词个数：" />
+                        <TextField fx:id="wordNumberTextField" prefHeight="30.0" prefWidth="255.0" text="100" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                    <children>
+                        <Label text="请选择导出项：" />
+                        <CheckBox fx:id="wordCheckBox" disable="true" mnemonicParsing="false" selected="true" text="单词" />
+                        <CheckBox fx:id="soundsCheckBox" mnemonicParsing="false" selected="true" text="音标" />
+                        <CheckBox fx:id="meaningCheckBox" mnemonicParsing="false" selected="true" text="释义" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0">
+                    <children>
+                        <Button fx:id="changeButton" mnemonicParsing="false" onAction="#do_changeButton_event" text="转换" />
+                        <Button fx:id="exitButton" mnemonicParsing="false" onAction="#do_exitButton_event" text="退出" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
